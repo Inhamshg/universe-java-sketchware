@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:gravity="center_horizontal"
+	android:padding="8dp">
+
+	<!-- Story Circle -->
+	<FrameLayout
+		android:layout_width="72dp"
+		android:layout_height="72dp"
+		android:layout_marginBottom="8dp">
+
+		<ImageView
+			android:id="@+id/story_image"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
+			android:contentDescription="Story" />
+
+		<!-- Story Indicator Ring -->
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/bg_story_ring" />
+
+	</FrameLayout>
+
+	<!-- Username -->
+	<TextView
+		android:id="@+id/story_username"
+		android:layout_width="72dp"
+		android:layout_height="wrap_content"
+		android:text="Username"
+		android:textSize="11sp"
+		android:textColor="?android:attr/textColorPrimary"
+		android:gravity="center"
+		android:ellipsize="end"
+		android:maxLines="1" />
+
+</LinearLayout>
