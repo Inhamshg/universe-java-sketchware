@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:background="#FFFFFF">
+
+	<!-- Horizontal RecyclerView for Stories -->
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recyclerStories"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:paddingStart="8dp"
+		android:paddingEnd="8dp"
+		android:clipToPadding="false"
+		android:scrollbars="none" />
+
+	<!-- Divider -->
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#E0E0E0" />
+</LinearLayout>
