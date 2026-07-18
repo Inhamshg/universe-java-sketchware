@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="?android:colorBackground">
+
+	<!-- AppBar with Toolbar -->
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/app_bar_layout6"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/colorSurface"
+		app:elevation="0dp">
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			app:contentInsetStart="16dp">
+			<RelativeLayout
+				android:id="@+id/relativelayout2"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+				<TextView
+					android:id="@+id/txtTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Universe"
+					android:textSize="22sp"
+					android:textStyle="bold"
+					android:textColor="#003300"
+					android:layout_centerVertical="true" />
+				<FrameLayout
+					android:id="@+id/layoutNotification"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:layout_marginEnd="8dp"
+					android:focusable="true"
+					android:layout_alignParentEnd="true"
+					android:layout_centerVertical="true">
+					<ImageView
+						android:id="@+id/imageview2"
+						android:layout_width="24dp"
+						android:layout_height="24dp"
+						android:src="@drawable/ic_notifications"
+						android:scaleType="centerInside"
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:contentDescription="Notifications" />
+					<TextView
+						android:id="@+id/tvNotificationCount"
+						android:layout_width="18dp"
+						android:layout_height="18dp"
+						android:layout_marginTop="6dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:textSize="10sp"
+						android:textStyle="bold"
+						android:layout_gravity="top|end"
+						android:background="@android:drawable/presence_online"
+						android:textColor="@android:color/white"
+						android:layout_marginEnd="6dp"
+						android:visibility="gone" />
+				</FrameLayout>
+			</RelativeLayout>
+		</androidx.appcompat.widget.Toolbar>
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<!-- Unified SwipeRefreshLayout + RecyclerView -->
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeRefresh"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+		
+		<!-- Single Vertical RecyclerView (Stories as first item, then Posts, Ads, etc.) -->
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerFeedMain"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:nestedScrollingEnabled="true"
+			android:clipToPadding="false" />
+			
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<!-- Empty State (overlay) -->
+	<TextView
+		android:id="@+id/tvEmpty"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="No posts available."
+		android:textSize="16sp"
+		android:layout_gravity="center_horizontal|center_vertical"
+		android:visibility="gone"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+	<!-- Floating Action Button Menu -->
+	<LinearLayout
+		android:id="@+id/linear10"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:orientation="vertical"
+		android:layout_gravity="bottom|end"
+		android:gravity="end">
+
+		<!-- Story Text FAB -->
+		<LinearLayout
+			android:id="@+id/layoutFabStoryText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:visibility="gone"
+			tools:visibility="visible">
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview5"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:cardBackgroundColor="?attr/colorSurface"
+				app:cardCornerRadius="6dp"
+				app:cardElevation="3dp"
+				android:layout_marginEnd="10dp">
+				<TextView
+					android:id="@+id/textview5"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="6dp"
+					android:paddingBottom="6dp"
+					android:text="Story Text"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:paddingStart="10dp"
+					android:paddingEnd="10dp" />
+			</androidx.cardview.widget.CardView>
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/fabStoryText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:fabSize="mini"
+				android:tint="#FFFFFF"
+				android:backgroundTint="#1B5E20"
+				android:contentDescription="TextStory" />
+		</LinearLayout>
+
+		<!-- Story Image FAB -->
+		<LinearLayout
+			android:id="@+id/layoutFabStoryImage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:visibility="gone"
+			tools:visibility="visible">
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:cardBackgroundColor="?attr/colorSurface"
+				app:cardCornerRadius="6dp"
+				app:cardElevation="3dp"
+				android:layout_marginEnd="10dp">
+				<TextView
+					android:id="@+id/textview6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="6dp"
+					android:paddingBottom="6dp"
+					android:text="Story Image"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:paddingStart="10dp"
+					android:paddingEnd="10dp" />
+			</androidx.cardview.widget.CardView>
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/fabStoryImage"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:fabSize="mini"
+				android:tint="#FFFFFF"
+				android:backgroundTint="#1B5E20"
+				android:contentDescription="ImageStory" />
+		</LinearLayout>
+
+		<!-- Post Text FAB -->
+		<LinearLayout
+			android:id="@+id/layoutFabPostText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:visibility="gone"
+			tools:visibility="visible">
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview7"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:cardBackgroundColor="?attr/colorSurface"
+				app:cardCornerRadius="6dp"
+				app:cardElevation="3dp"
+				android:layout_marginEnd="10dp">
+				<TextView
+					android:id="@+id/textview7"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="6dp"
+					android:paddingBottom="6dp"
+					android:text="Post Text"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:paddingStart="10dp"
+					android:paddingEnd="10dp" />
+			</androidx.cardview.widget.CardView>
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/fabPostText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:fabSize="mini"
+				android:tint="#FFFFFF"
+				android:backgroundTint="#1B5E20"
+				android:contentDescription="PostText" />
+		</LinearLayout>
+
+		<!-- Post Image FAB -->
+		<LinearLayout
+			android:id="@+id/layoutFabPostImage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:visibility="gone"
+			tools:visibility="visible">
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview8"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:cardBackgroundColor="?attr/colorSurface"
+				app:cardCornerRadius="6dp"
+				app:cardElevation="3dp"
+				android:layout_marginEnd="10dp">
+				<TextView
+					android:id="@+id/textview8"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="6dp"
+					android:paddingBottom="6dp"
+					android:text="Post Image"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:paddingStart="10dp"
+					android:paddingEnd="10dp" />
+			</androidx.cardview.widget.CardView>
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/fabPostImage"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:fabSize="mini"
+				app:backgroundTint="?attr/colorPrimary"
+				app:tint="?attr/colorOnPrimary"
+				android:contentDescription="PostImage" />
+		</LinearLayout>
+
+		<!-- Main FAB -->
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fabMain"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:backgroundTint="?attr/colorPrimary"
+			app:tint="?attr/colorOnPrimary"
+			app:srcCompat="@android:drawable/ic_input_add"
+			android:contentDescription="ExpandActions" />
+	</LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
