@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="16dp"
+	android:gravity="center"
+	android:background="#FFEBEE">
+
+	<ImageView
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:src="@drawable/ic_error"
+		android:contentDescription="Error"
+		android:layout_marginBottom="12dp"
+		android:tint="#D32F2F" />
+
+	<TextView
+		android:id="@+id/errorText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Failed to load posts"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		android:textColor="#D32F2F"
+		android:gravity="center" />
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Please check your connection and try again"
+		android:textSize="13sp"
+		android:textColor="#C62828"
+		android:layout_marginTop="8dp"
+		android:gravity="center" />
+
+</LinearLayout>
